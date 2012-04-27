@@ -60,7 +60,7 @@ public class AvroGenericRecordReader implements RecordReader<NullWritable, AvroG
 
     GenericDatumReader<GenericRecord> gdr = new GenericDatumReader<GenericRecord>();
 
-    if(latest != null) gdr.setExpected(latest);
+    //if(latest != null) gdr.setExpected(latest);
 
     this.reader = new DataFileReader<GenericRecord>(new FsInput(split.getPath(), job), gdr);
     this.reader.sync(split.getStart());
