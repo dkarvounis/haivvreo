@@ -5,7 +5,7 @@
   <groupId>com.linkedin</groupId>
   <artifactId>haivvreo</artifactId>
   <packaging>jar</packaging>
-  <version>1.0.11-avro15-SNAPSHOT</version>
+  <version>1.0.7-SNAPSHOT</version>
   <name>haivvreo</name>
   <url>https://github.com/jghoman/haivvreo</url>
   <description>Library for processing Avro data in Hive.</description>
@@ -51,9 +51,9 @@
   </build>
 
   <properties>
-    <avro.version>1.5.3</avro.version>
-    <hadoop.version>0.20.2</hadoop.version>
-    <hive.version>0.7.1-SNAPSHOT</hive.version>
+    <avro.version>1.6.1</avro.version>
+    <hadoop.version>0.20.2-cdh3u1</hadoop.version>
+    <hive.version>0.7.1-cdh3u1</hive.version>
   </properties>
 
   <repositories>
@@ -99,6 +99,17 @@
       <name>www.apache.org</name>
       <url>https://repository.apache.org/content/repositories/releases</url>
     </repository>
+    <repository>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <id>cloudera releases</id>
+      <name>www.cloudera.com</name>
+      <url>https://repository.cloudera.com/artifactory/cloudera-repos/</url>
+    </repository>    
   </repositories>
   <dependencies>
     <dependency>
@@ -108,7 +119,7 @@
       <scope>test</scope>
     </dependency>
     <dependency>
-      <groupId>org.apache.hive</groupId>
+      <groupId>org.apache.hadoop.hive</groupId>
       <artifactId>hive-serde</artifactId>
       <version>${hive.version}</version>
     </dependency>
@@ -128,7 +139,7 @@
       </exclusions>
     </dependency>
     <dependency>
-      <groupId>org.apache.hive</groupId>
+      <groupId>org.apache.hadoop.hive</groupId>
       <artifactId>hive-exec</artifactId>
       <version>${hive.version}</version>
     </dependency>
